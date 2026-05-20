@@ -49,6 +49,7 @@ More content...
 
 - Slides are separated by `---` on its own line
 - Each slide section has `---` opening and closing the frontmatter block
+- The last slide does **not** need a trailing `---` divider — the end of file marks the end of the last slide
 - Minimum: one `---` pair per slide (opening frontmatter + closing divider)
 
 ## Markdown Support
@@ -353,8 +354,6 @@ title: Thank You!
 </div>
 
 </div>
-
----
 ```
 
 ### Example 2: Math Lecture
@@ -433,8 +432,6 @@ title: Summary
 4. Applications in PCA, Google PageRank, vibration analysis
 
 </div>
-
----
 ```
 
 ### Example 3: Product Pitch Deck
@@ -577,8 +574,6 @@ title: Join Us
 </div>
 
 </div>
-
----
 ```
 
 ## Agent Workflow
@@ -591,7 +586,7 @@ title: Join Us
 4. **Add visual variety** — use different backgrounds, layouts, and media to keep engagement
 5. **Include math** — use `$...$` for inline and `$$...$$` for display equations where applicable
 6. **Use HTML components** — create cards, grids, callouts, and custom layouts with Tailwind
-7. **End with a slide separator** — always close with `---`
+7. **No trailing divider** — the last slide ends at EOF; no trailing `---` is needed
 
 ### Editing Existing Slides
 
@@ -611,7 +606,7 @@ title: Join Us
 - **Callout boxes** for highlighting key insights: `border-l-4 border-X`
 - **Large emojis** as visual anchors: `text-6xl` or `text-8xl`
 - **Math for technical content** — always render equations properly
-- **End slides with `---`** to properly close the file
+- **No trailing divider** — the last slide ends at EOF; do not add a trailing `---`
 
 ### Color Scheme Reference
 
