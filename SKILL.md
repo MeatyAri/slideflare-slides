@@ -608,6 +608,31 @@ title: Join Us
 - **Math for technical content** — always render equations properly
 - **No trailing divider** — the last slide ends at EOF; do not add a trailing `---`
 
+### How Slides Scale (important)
+
+Slides are laid out on a fixed 1280×720 design canvas and then uniformly scaled
+to fit the window. Scaling is **width-driven** (the canvas is scaled to fill the
+window width), so text is the same size at any screen resolution or window size.
+
+There is **one extra rule**: if any slide's content is too tall to fit the window
+height, the **entire deck** is shrunk by a single shared factor so that the
+overflowing slide fits and nothing gets clipped. Because the factor is shared,
+every slide scales down together to keep text sizes consistent across the deck.
+
+**Consequence to know when a user reports "everything got smaller after I edited
+one slide":** adding too much content to a single slide makes that slide overflow
+the height, which shrinks the whole deck. The fix is to **reduce the content on
+the overflowing slide** (or split it into two slides) — do not try to change CSS
+or scaling; once the tall slide fits the height again, the deck returns to full
+size automatically.
+
+**To avoid this entirely, keep content balanced:**
+
+- Put a reasonable, similar amount of content on each slide.
+- Never let one slide overflow the height while another is nearly empty.
+- If a slide feels dense, split it into two rather than cramming it in.
+- One main idea per slide; prefer fewer bullet points and shorter lines.
+
 ### Color Scheme Reference
 
 | Theme | bg_color | text_color |
